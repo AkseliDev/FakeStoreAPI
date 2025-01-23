@@ -41,7 +41,7 @@ string json = JsonSerializer.Serialize(groupedProducts, new JsonSerializerOption
     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
 });
 
-// safe to a json file
+// save to a json file
 File.WriteAllText("grouped_products.json", json);
 
 Console.WriteLine("Products saved.");
