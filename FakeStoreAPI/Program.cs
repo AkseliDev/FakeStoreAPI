@@ -1,8 +1,8 @@
 ﻿using FakeStoreAPI;
-using System.Net.Http.Json;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
+Console.WriteLine("Retrieving products");
 
 // get products from the api
 var products = await StoreApi.GetAllProducts();
@@ -43,3 +43,5 @@ string json = JsonSerializer.Serialize(groupedProducts, new JsonSerializerOption
 
 // safe to a json file
 File.WriteAllText("grouped_products.json", json);
+
+Console.WriteLine("Products saved.");

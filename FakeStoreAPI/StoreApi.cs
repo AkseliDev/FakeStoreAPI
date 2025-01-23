@@ -11,7 +11,7 @@ internal class StoreApi
 {
     const int MaxRetries = 5;
 
-    private static HttpClient _httpClient = new HttpClient();
+    private static HttpClient HttpClient = new HttpClient();
 
     /// <summary>
     /// Gets list of all products from the api
@@ -28,7 +28,7 @@ internal class StoreApi
             // request the products from api and log errors
             try
             {
-                products = await _httpClient.GetFromJsonAsync<Product[]>("https://fakestoreapi.com/products");
+                products = await HttpClient.GetFromJsonAsync<Product[]>("https://fakestoreapi.com/products");
             }
             catch (Exception e)
             {
